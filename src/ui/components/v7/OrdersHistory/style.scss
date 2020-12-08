@@ -1,0 +1,17 @@
+.OrdersHistory {
+    &__placeholder {
+        text-align: center;
+    }
+
+    &__content {
+        max-height: 340px;
+        overflow: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+    }
+}

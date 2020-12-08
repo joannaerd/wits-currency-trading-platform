@@ -1,0 +1,59 @@
+.Table {
+    $_root: &;
+
+    width: 100%;
+
+    &__heading,
+    &__cell {
+        text-align: center;
+        padding: .5em .25em;
+    }
+
+    &__cell {
+        position: relative;
+        padding: .5em .25em;
+        border-bottom: 1px solid currentColor;
+
+        &::before {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            content: '';
+            background-color: currentColor;
+            opacity: 0;
+            transition: opacity .2s ease;
+        }
+
+        &--numeric {
+            font-variant-numeric: tabular-nums;
+        }
+    }
+
+    &__row {
+        cursor: pointer;
+
+        &:hover {
+            #{$_root}__cell:before {
+                opacity: .15;
+            }
+        }
+
+        &:last-child {
+            #{$_root}__cell {
+                border-bottom: 0;
+            }
+        }
+
+        &--selected {
+
+            &,
+            &:hover {
+                #{$_root}__cell:before {
+                    opacity: .25;
+                }
+            }
+        }
+    }
+}
