@@ -15,7 +15,7 @@ enum UserResponse {
 
 define the enum `CurrencySymbol`.
 
-1. Available currencies are: USD, EUR, GBP.
+1. Available currencies are: USD, EUR, PLN.
 2. The keys should match the currency symbols.
 3. The values should hold the currency symbols as strings.
 

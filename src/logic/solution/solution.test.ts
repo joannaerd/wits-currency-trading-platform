@@ -8,13 +8,13 @@ const initialRates = [
         ask: 1,
     },
     {
-        baseSymbol: CurrencySymbol.GBP,
+        baseSymbol: CurrencySymbol.PLN,
         quoteSymbol: CurrencySymbol.USD,
         bid: 1.95,
         ask: 2.05,
     },
     {
-        baseSymbol: CurrencySymbol.GBP,
+        baseSymbol: CurrencySymbol.PLN,
         quoteSymbol: CurrencySymbol.EUR,
         bid: 2.95,
         ask: 3.05,
@@ -36,7 +36,7 @@ describe('Market', () => {
         it('returns correct value for valid pair', () => {
             const amount = 700;
             const result = market.calculateBidQuote({
-                baseSymbol: CurrencySymbol.GBP,
+                baseSymbol: CurrencySymbol.PLN,
                 quoteSymbol: CurrencySymbol.USD,
                 amount,
             })
@@ -58,7 +58,7 @@ describe('Market', () => {
         it('returns correct value for valid pair', () => {
             const amount = 700;
             const result = market.calculateAskQuote({
-                baseSymbol: CurrencySymbol.GBP,
+                baseSymbol: CurrencySymbol.PLN,
                 quoteSymbol: CurrencySymbol.USD,
                 amount,
             })
@@ -80,7 +80,7 @@ describe('Market', () => {
 const initialPositions: CurrencyPositions = {
     [CurrencySymbol.USD]: 1000,
     [CurrencySymbol.EUR]: 1000,
-    [CurrencySymbol.GBP]: 1000,
+    [CurrencySymbol.PLN]: 1000,
 };
 
 describe('Portfolio', () => {
@@ -101,14 +101,14 @@ describe('Portfolio', () => {
 
             beforeEach(() => {
                 portfolio.buy({
-                    baseSymbol: CurrencySymbol.GBP,
+                    baseSymbol: CurrencySymbol.PLN,
                     quoteSymbol: CurrencySymbol.USD,
                     amount,
                 });
             })
 
             it('updates position correctly', () => {
-                expect(portfolio.currentPositions.GBP).toBe(1000 + amount);
+                expect(portfolio.currentPositions.PLN).toBe(1000 + amount);
                 expect(portfolio.currentPositions.USD).toBe(1000 - (amount * 2.05));
             });
 
@@ -116,7 +116,7 @@ describe('Portfolio', () => {
                 expect(portfolio.ordersHistory.length).toBe(1);
 
                 expect(portfolio.ordersHistory[0].operation).toBe(Operation.BUY);
-                expect(portfolio.ordersHistory[0].baseSymbol).toBe(CurrencySymbol.GBP);
+                expect(portfolio.ordersHistory[0].baseSymbol).toBe(CurrencySymbol.PLN);
                 expect(portfolio.ordersHistory[0].quoteSymbol).toBe(CurrencySymbol.USD);
                 expect(portfolio.ordersHistory[0].amount).toBe(amount);
                 expect(typeof portfolio.ordersHistory[0].date).toBe('object');
@@ -127,7 +127,7 @@ describe('Portfolio', () => {
             it('does not update position if the amount is too big', () => {
                 const amount = 15000;
                 portfolio.buy({
-                    baseSymbol: CurrencySymbol.GBP,
+                    baseSymbol: CurrencySymbol.PLN,
                     quoteSymbol: CurrencySymbol.USD,
                     amount,
                 });
@@ -140,10 +140,10 @@ describe('Portfolio', () => {
                 const amount = 10;
                 portfolio.buy({
                     baseSymbol: CurrencySymbol.USD,
-                    quoteSymbol: CurrencySymbol.GBP,
+                    quoteSymbol: CurrencySymbol.PLN,
                     amount,
                 });
-                expect(portfolio.currentPositions.GBP).toBe(initialPositions.GBP);
+                expect(portfolio.currentPositions.PLN).toBe(initialPositions.PLN);
                 expect(portfolio.currentPositions.USD).toBe(initialPositions.USD);
                 expect(portfolio.ordersHistory.length).toBe(0);
             });
@@ -156,14 +156,14 @@ describe('Portfolio', () => {
 
             beforeEach(() => {
                 portfolio.sell({
-                    baseSymbol: CurrencySymbol.GBP,
+                    baseSymbol: CurrencySymbol.PLN,
                     quoteSymbol: CurrencySymbol.USD,
                     amount,
                 });
             })
 
             it('updates position correctly', () => {
-                expect(portfolio.currentPositions.GBP).toBe(1000 - amount);
+                expect(portfolio.currentPositions.PLN).toBe(1000 - amount);
                 expect(portfolio.currentPositions.USD).toBe(1000 + (amount * 1.95));
             });
 
@@ -171,7 +171,7 @@ describe('Portfolio', () => {
                 expect(portfolio.ordersHistory.length).toBe(1);
 
                 expect(portfolio.ordersHistory[0].operation).toBe(Operation.SELL);
-                expect(portfolio.ordersHistory[0].baseSymbol).toBe(CurrencySymbol.GBP);
+                expect(portfolio.ordersHistory[0].baseSymbol).toBe(CurrencySymbol.PLN);
                 expect(portfolio.ordersHistory[0].quoteSymbol).toBe(CurrencySymbol.USD);
                 expect(portfolio.ordersHistory[0].amount).toBe(amount);
                 expect(typeof portfolio.ordersHistory[0].date).toBe('object');
@@ -182,11 +182,11 @@ describe('Portfolio', () => {
             it('does not update position if the amount is too big', () => {
                 const amount = 15000;
                 portfolio.buy({
-                    baseSymbol: CurrencySymbol.GBP,
+                    baseSymbol: CurrencySymbol.PLN,
                     quoteSymbol: CurrencySymbol.USD,
                     amount,
                 });
-                expect(portfolio.currentPositions.GBP).toBe(initialPositions.GBP);
+                expect(portfolio.currentPositions.PLN).toBe(initialPositions.PLN);
                 expect(portfolio.currentPositions.USD).toBe(initialPositions.USD);
                 expect(portfolio.ordersHistory.length).toBe(0);
             });
@@ -195,10 +195,10 @@ describe('Portfolio', () => {
                 const amount = 10;
                 portfolio.buy({
                     baseSymbol: CurrencySymbol.USD,
-                    quoteSymbol: CurrencySymbol.GBP,
+                    quoteSymbol: CurrencySymbol.PLN,
                     amount,
                 });
-                expect(portfolio.currentPositions.GBP).toBe(initialPositions.GBP);
+                expect(portfolio.currentPositions.PLN).toBe(initialPositions.PLN);
                 expect(portfolio.currentPositions.USD).toBe(initialPositions.USD);
                 expect(portfolio.ordersHistory.length).toBe(0);
             });

@@ -1,7 +1,7 @@
 export enum CurrencySymbol {
   USD = 'USD',
   EUR = 'EUR',
-  GBP = 'GBP',
+  PLN = 'PLN',
 };
 
 /*
