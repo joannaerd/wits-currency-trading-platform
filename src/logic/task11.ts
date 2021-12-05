@@ -96,11 +96,11 @@ export type CurrencyPositions = { [key in keyof typeof CurrencySymbol]: number }
 
 /*
 TASK 10: Orders history (type & class methods)
-- Define a new enum `Operation`, holding the values of 'BUY' and 'SELL'
-- Define a new type `Order`, consisting of the properties of `OrderParameters`, a `date` and `operation`.
-- In `Portfolio` class (below), define the field `ordersHistory` and initialize it with an empty array
-- In `Portfolio` class, define the method `saveOrder` adding the given order to `ordersHistory`
-- Add `saveOrder` call in `buy` and `sell` methods
+1. Define a new enum `Operation`, holding the values of 'BUY' and 'SELL'
+2. Define a new type `Order`, consisting of the properties of `OrderParameters`, a `date` and `operation`.
+3. In `Portfolio` class (below), define the field `ordersHistory` and initialize it with an empty array
+4. In `Portfolio` class, define the method `saveOrder` adding the given order to `ordersHistory`
+5. Add `saveOrder` call in `buy` and `sell` methods
 
 In `App.tsx` change the UI version to 7 for preview.
 */

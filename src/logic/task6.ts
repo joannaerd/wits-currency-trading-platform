@@ -20,11 +20,11 @@ export type ExchangeRate = CurrencyPair & {
 TASK 6: Exchange rates history (type, class fields and methods)
 In order to show market trends, historical rates should be stored.
 
-- Define a new type `ExchangeRateHistoryItem` (composed of ExchangeRate properties and a date)
-- In `Market` class (below), define the field `exchangeRateHistory` and initialize it as an empty array
-- In `Market` class, define a method `saveRatesHistory` which appends the current exchange rates to `exchangeRateHistory` field.
-- Refactor `updateRates` method to call `saveRatesHistory`
-- In `Market` class, define a method `getRatesHistory` retrieving rates history for a given currency pair
+1. Define a new type `ExchangeRateHistoryItem` (composed of ExchangeRate properties and a date)
+2. In `Market` class (below), define the field `exchangeRateHistory` and initialize it as an empty array
+3. In `Market` class, define a method `saveRatesHistory` which appends the current exchange rates to `exchangeRateHistory` field.
+4. Refactor `updateRates` method to call `saveRatesHistory`
+5. In `Market` class, define a method `getRatesHistory` retrieving rates history for a given currency pair
 
 In  `App.tsx` change the UI version to 3 for preview.
 */

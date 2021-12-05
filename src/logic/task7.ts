@@ -70,18 +70,18 @@ export class Market {
 TASK 7: Portfolio (class definition)
 A collection of financial investments is called a portfolio.
 
-- Define the type `CurrencyPositions` using the following syntax:
+1. Define the type `CurrencyPositions` using the following syntax:
 export type CurrencyPositions = { [key in keyof typeof CurrencySymbol]: number };
 
-- Define the class `Portfolio`
-- Define a field `currentPositions` of `CurrencyPositions` type and initialize it with the following value:
+2. Define the class `Portfolio`
+3. Define a field `currentPositions` of `CurrencyPositions` type and initialize it with the following value:
   {
       [CurrencySymbol.EUR]: 1000,
       [CurrencySymbol.GBP]: 2000,
       [CurrencySymbol.USD]: 3000,
   };
 
-- Allow the optional value of `currentPositions` to be initalized with a given value in the constructor
+4. Allow the optional value of `currentPositions` to be initalized with a given value in the constructor
 
 In  `App.tsx` change the UI version to 4 for preview.
 */

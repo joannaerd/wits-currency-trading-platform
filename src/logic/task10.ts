@@ -30,9 +30,9 @@ TASK 10: Selling (class methods)
 When executing a sell market order, the amount of quote currency to be obtained is calculated by multiplying the amount of base currency to be sold and the bid price.
 Allow the user to perform sell operations.
 
-- In `Market` class (below), define the method `calculateBidQuote` returning the quote for a given currency pair.
-- In `Portfolio` class (below), add the `sell` method, taking an `orderParameters` argument. It should calculate the quote and update positions for both currencies affected.
-- Add a constrain regarding available funds.
+1. In `Market` class (below), define the method `calculateBidQuote` returning the quote for a given currency pair.
+2. In `Portfolio` class (below), add the `sell` method, taking an `orderParameters` argument. It should calculate the quote and update positions for both currencies affected.
+3. Add a constrain regarding available funds.
 
 In `App.tsx` change the UI version to 6 for preview.
 */

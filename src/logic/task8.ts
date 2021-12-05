@@ -41,9 +41,9 @@ export class Portfolio {
 TASK 8: Buy quote (type & class methods)
 When executing a buy market order, the amount of quote currency to be paid is calculated by multiplying the amount of base currency requested and the ask price.
 
-- Define a new type `OrderParameters`, consisting of the properties of `CurrencyPair` and a numeric `amount`
-- In `Market` class (below), define the method `calculateAskQuote` returning the quote for a given currency pair.
-- To get exchange rates, use the method `findCurrencyPairRate`
+1. Define a new type `OrderParameters`, consisting of the properties of `CurrencyPair` and a numeric `amount`
+2. In `Market` class (below), define the method `calculateAskQuote` returning the quote for a given currency pair.
+3. To get exchange rates, use the method `findCurrencyPairRate`
 */
 
 export class Market {
