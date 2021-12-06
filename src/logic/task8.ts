@@ -58,10 +58,10 @@ export class Market {
             ask: 1.1323,
         },
         {
-            baseSymbol: CurrencySymbol.PLN,
-            quoteSymbol: CurrencySymbol.USD,
-            bid: 0.24595,
-            ask: 0.24591,
+            baseSymbol: CurrencySymbol.USD,
+            quoteSymbol: CurrencySymbol.PLN,
+            bid: 4.0654,
+            ask: 4.0668,
         },
         {
             baseSymbol: CurrencySymbol.EUR,
