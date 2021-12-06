@@ -3,7 +3,7 @@ import { generateRates } from './helpers/generateRate';
 export enum CurrencySymbol {
   USD = 'USD',
   EUR = 'EUR',
-  GBP = 'GBP',
+  PLN = 'PLN',
 };
 
 export type CurrencyPair = {
@@ -26,22 +26,22 @@ export class Market {
 
   constructor(initialRates: ExchangeRate[] = [
     {
-      baseSymbol: CurrencySymbol.EUR,
-      quoteSymbol: CurrencySymbol.USD,
-      bid: 1.182,
-      ask: 1.182,
+        baseSymbol: CurrencySymbol.EUR,
+        quoteSymbol: CurrencySymbol.USD,
+        bid: 1.1313,
+        ask: 1.1323,
     },
     {
-      baseSymbol: CurrencySymbol.GBP,
-      quoteSymbol: CurrencySymbol.USD,
-      bid: 1.3081,
-      ask: 1.3085,
+        baseSymbol: CurrencySymbol.USD,
+        quoteSymbol: CurrencySymbol.PLN,
+        bid: 4.0654,
+        ask: 4.0668,
     },
     {
-      baseSymbol: CurrencySymbol.EUR,
-      quoteSymbol: CurrencySymbol.GBP,
-      bid: 0.9035,
-      ask: 0.9038,
+        baseSymbol: CurrencySymbol.EUR,
+        quoteSymbol: CurrencySymbol.PLN,
+        bid: 4.5963,
+        ask: 4.6023,
     }
   ]) {
     this.updateRates(initialRates);
@@ -70,18 +70,18 @@ export class Market {
 TASK 7: Portfolio (class definition)
 A collection of financial investments is called a portfolio.
 
-- Define the type `CurrencyPositions` using the following syntax:
+1. Define the type `CurrencyPositions` using the following syntax:
 export type CurrencyPositions = { [key in keyof typeof CurrencySymbol]: number };
 
-- Define the class `Portfolio`
-- Define a field `currentPositions` of `CurrencyPositions` type and initialize it with the following value:
+2. Define the class `Portfolio`
+3. Define a field `currentPositions` of `CurrencyPositions` type and initialize it with the following value:
   {
       [CurrencySymbol.EUR]: 1000,
-      [CurrencySymbol.GBP]: 2000,
+      [CurrencySymbol.PLN]: 2000,
       [CurrencySymbol.USD]: 3000,
   };
 
-- Allow the optional value of `currentPositions` to be initalized with a given value in the constructor
+4. Allow the optional value of `currentPositions` to be initalized with a given value in the constructor
 
 In  `App.tsx` change the UI version to 4 for preview.
 */

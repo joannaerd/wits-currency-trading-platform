@@ -3,7 +3,7 @@ import { generateRates } from './helpers/generateRate';
 export enum CurrencySymbol {
     USD = 'USD',
     EUR = 'EUR',
-    GBP = 'GBP',
+    PLN = 'PLN',
 };
 
 export type CurrencyPair = {
@@ -30,9 +30,9 @@ TASK 10: Selling (class methods)
 When executing a sell market order, the amount of quote currency to be obtained is calculated by multiplying the amount of base currency to be sold and the bid price.
 Allow the user to perform sell operations.
 
-- In `Market` class (below), define the method `calculateBidQuote` returning the quote for a given currency pair.
-- In `Portfolio` class (below), add the `sell` method, taking an `orderParameters` argument. It should calculate the quote and update positions for both currencies affected.
-- Add a constrain regarding available funds.
+1. In `Market` class (below), define the method `calculateBidQuote` returning the quote for a given currency pair.
+2. In `Portfolio` class (below), add the `sell` method, taking an `orderParameters` argument. It should calculate the quote and update positions for both currencies affected.
+3. Add a constrain regarding available funds.
 
 In `App.tsx` change the UI version to 6 for preview.
 */
@@ -45,22 +45,22 @@ export class Market {
         {
             baseSymbol: CurrencySymbol.EUR,
             quoteSymbol: CurrencySymbol.USD,
-            bid: 1.182,
-            ask: 1.182,
+            bid: 1.1313,
+            ask: 1.1323,
         },
         {
-            baseSymbol: CurrencySymbol.GBP,
-            quoteSymbol: CurrencySymbol.USD,
-            bid: 1.3081,
-            ask: 1.3085,
+            baseSymbol: CurrencySymbol.USD,
+            quoteSymbol: CurrencySymbol.PLN,
+            bid: 4.0654,
+            ask: 4.0668,
         },
         {
             baseSymbol: CurrencySymbol.EUR,
-            quoteSymbol: CurrencySymbol.GBP,
-            bid: 0.9035,
-            ask: 0.9038,
+            quoteSymbol: CurrencySymbol.PLN,
+            bid: 4.5963,
+            ask: 4.6023,
         }
-    ]) {
+  ]) {
         this.updateRates(initialRates);
     };
 
@@ -100,7 +100,7 @@ export class Portfolio {
     market: Market;
     currentPositions: CurrencyPositions = {
         [CurrencySymbol.EUR]: 1000,
-        [CurrencySymbol.GBP]: 2000,
+        [CurrencySymbol.PLN]: 2000,
         [CurrencySymbol.USD]: 3000,
     };
 

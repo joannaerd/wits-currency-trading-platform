@@ -3,7 +3,7 @@ import { generateRates } from './helpers/generateRate';
 export enum CurrencySymbol {
     USD = 'USD',
     EUR = 'EUR',
-    GBP = 'GBP',
+    PLN = 'PLN',
 };
 
 export type CurrencyPair = {
@@ -32,22 +32,22 @@ export class Market {
         {
             baseSymbol: CurrencySymbol.EUR,
             quoteSymbol: CurrencySymbol.USD,
-            bid: 1.182,
-            ask: 1.182,
+            bid: 1.1313,
+            ask: 1.1323,
         },
         {
-            baseSymbol: CurrencySymbol.GBP,
-            quoteSymbol: CurrencySymbol.USD,
-            bid: 1.3081,
-            ask: 1.3085,
+            baseSymbol: CurrencySymbol.USD,
+            quoteSymbol: CurrencySymbol.PLN,
+            bid: 4.0654,
+            ask: 4.0668,
         },
         {
             baseSymbol: CurrencySymbol.EUR,
-            quoteSymbol: CurrencySymbol.GBP,
-            bid: 0.9035,
-            ask: 0.9038,
+            quoteSymbol: CurrencySymbol.PLN,
+            bid: 4.5963,
+            ask: 4.6023,
         }
-    ]) {
+  ]) {
         this.updateRates(initialRates);
     };
 
@@ -96,11 +96,11 @@ export type CurrencyPositions = { [key in keyof typeof CurrencySymbol]: number }
 
 /*
 TASK 10: Orders history (type & class methods)
-- Define a new enum `Operation`, holding the values of 'BUY' and 'SELL'
-- Define a new type `Order`, consisting of the properties of `OrderParameters`, a `date` and `operation`.
-- In `Portfolio` class (below), define the field `ordersHistory` and initialize it with an empty array
-- In `Portfolio` class, define the method `saveOrder` adding the given order to `ordersHistory`
-- Add `saveOrder` call in `buy` and `sell` methods
+1. Define a new enum `Operation`, holding the values of 'BUY' and 'SELL'
+2. Define a new type `Order`, consisting of the properties of `OrderParameters`, a `date` and `operation`.
+3. In `Portfolio` class (below), define the field `ordersHistory` and initialize it with an empty array
+4. In `Portfolio` class, define the method `saveOrder` adding the given order to `ordersHistory`
+5. Add `saveOrder` call in `buy` and `sell` methods
 
 In `App.tsx` change the UI version to 7 for preview.
 */
@@ -109,7 +109,7 @@ export class Portfolio {
     market: Market;
     currentPositions: CurrencyPositions = {
         [CurrencySymbol.EUR]: 1000,
-        [CurrencySymbol.GBP]: 2000,
+        [CurrencySymbol.PLN]: 2000,
         [CurrencySymbol.USD]: 3000,
     };
 

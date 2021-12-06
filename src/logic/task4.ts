@@ -1,7 +1,7 @@
 export enum CurrencySymbol {
   USD = 'USD',
   EUR = 'EUR',
-  GBP = 'GBP',
+  PLN = 'PLN',
 };
 
 export type CurrencyPair = {
@@ -37,30 +37,44 @@ class Greeter {
 
 define the class `Market`.
 
-- Add a field of `currentRates` to hold an array of `ExchangeRate`s.
-- Initialize the `currentRates` field with the following data:
+1. Add a field of `currentRates` to hold an array of `ExchangeRate`s.
+2. Initialize the `currentRates` field with the following data:
   [
     {
         baseSymbol: CurrencySymbol.EUR,
         quoteSymbol: CurrencySymbol.USD,
-        bid: 1.182,
-        ask: 1.182,
+        bid: 1.1313,
+        ask: 1.1323,
     },
     {
-        baseSymbol: CurrencySymbol.GBP,
-        quoteSymbol: CurrencySymbol.USD,
-        bid: 1.3081,
-        ask: 1.3085,
+        baseSymbol: CurrencySymbol.USD,
+        quoteSymbol: CurrencySymbol.PLN,
+        bid: 4.0654,
+        ask: 4.0668,
     },
     {
         baseSymbol: CurrencySymbol.EUR,
-        quoteSymbol: CurrencySymbol.GBP,
-        bid: 0.9035,
-        ask: 0.9038,
+        quoteSymbol: CurrencySymbol.PLN,
+        bid: 4.5963,
+        ask: 4.6023,
     }
   ]
 
-- In `Market` class, define the method `findCurrencyPairRate` which returns exchange rates for a given currency pair
+3. In `Market` class, define the method `findCurrencyPairRate` which takes arguments:
+baseSymbol and quoteSymbol being parts of CurrencyPair type and returns exchange
+rates for a given currency pair (union type with undefined).
+
+Function types syntax:
+functionName = (arg: typeOfArg): returnType => { functionBody }
+
+Use 'find' method:
+The find() method returns the value of the first element in the provided array
+that satisfies the provided testing function. If no values satisfy the testing
+function, undefined is returned.
+
+Example:
+const array1 = [5, 12, 8, 130, 44];
+const found = array1.find(element => element > 10);
 
 Export the created class from this file.
 

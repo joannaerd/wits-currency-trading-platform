@@ -3,7 +3,7 @@ import { generateRates } from './helpers/generateRate';
 export enum CurrencySymbol {
     USD = 'USD',
     EUR = 'EUR',
-    GBP = 'GBP',
+    PLN = 'PLN',
 };
 
 export type CurrencyPair = {
@@ -26,7 +26,7 @@ export type CurrencyPositions = { [key in keyof typeof CurrencySymbol]: number }
 export class Portfolio {
     currentPositions: CurrencyPositions = {
         [CurrencySymbol.EUR]: 1000,
-        [CurrencySymbol.GBP]: 2000,
+        [CurrencySymbol.PLN]: 2000,
         [CurrencySymbol.USD]: 3000,
     };
 
@@ -41,9 +41,9 @@ export class Portfolio {
 TASK 8: Buy quote (type & class methods)
 When executing a buy market order, the amount of quote currency to be paid is calculated by multiplying the amount of base currency requested and the ask price.
 
-- Define a new type `OrderParameters`, consisting of the properties of `CurrencyPair` and a numeric `amount`
-- In `Market` class (below), define the method `calculateAskQuote` returning the quote for a given currency pair.
-- To get exchange rates, use the method `findCurrencyPairRate`
+1. Define a new type `OrderParameters`, consisting of the properties of `CurrencyPair` and a numeric `amount`
+2. In `Market` class (below), define the method `calculateAskQuote` returning the quote for a given currency pair.
+3. To get exchange rates, use the method `findCurrencyPairRate`
 */
 
 export class Market {
@@ -54,22 +54,22 @@ export class Market {
         {
             baseSymbol: CurrencySymbol.EUR,
             quoteSymbol: CurrencySymbol.USD,
-            bid: 1.182,
-            ask: 1.182,
+            bid: 1.1313,
+            ask: 1.1323,
         },
         {
-            baseSymbol: CurrencySymbol.GBP,
-            quoteSymbol: CurrencySymbol.USD,
-            bid: 1.3081,
-            ask: 1.3085,
+            baseSymbol: CurrencySymbol.USD,
+            quoteSymbol: CurrencySymbol.PLN,
+            bid: 4.0654,
+            ask: 4.0668,
         },
         {
             baseSymbol: CurrencySymbol.EUR,
-            quoteSymbol: CurrencySymbol.GBP,
-            bid: 0.9035,
-            ask: 0.9038,
+            quoteSymbol: CurrencySymbol.PLN,
+            bid: 4.5963,
+            ask: 4.6023,
         }
-    ]) {
+  ]) {
         this.updateRates(initialRates);
     };
 
