@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Prerequisites: 
+1. Node v.14 installed (tested with 14.15.0)
+1. Packages installed (`npm i` in the project directory)
+
 ## Available Scripts
 
 In the project directory, you can run:
